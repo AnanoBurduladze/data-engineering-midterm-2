@@ -1,0 +1,27 @@
+# [Terminal] Python
+$ python -m venv venv
+$ source venv/bin/activate  # macOS/Linux
+$ venv\Scripts\activate     # Windows
+
+# [Terminal]
+$ pip install fastapi uvicorn sqlite3
+
+# [Terminal]
+$ python init_db.py
+Database initialized successfully!
+
+# [Terminal] FastAPI
+$ uvicorn api:app --reload
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+
+# [Terminal] Docker Image
+$ docker build -t fastapi-app .
+[+] Building 2.3s (8/8) FINISHED
+
+# [Terminal] Docker
+$ bash run_docker.sh  # (Linux/macOS/Git Bash)
+$ sh run_docker.sh    # (Windows PowerShell)
+Building Docker image...
+Running Docker container...
+INFO:     Application startup complete.
+
