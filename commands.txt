@@ -1,0 +1,39 @@
+    1  [200~sudo usermod -aG docker $USER
+    2  newgrp docker
+    3  docker build -t csv_processor .
+    4  docker build -t csv_processor .
+    5  docker run --rm -v "$(pwd)":/app csv_processor
+    6  ls -l
+    7  echo > Dockerfile
+    8  # იყენებს ოფიციალურ Python 3.10-ის იმიჯს
+    9  FROM python:3.10
+   10  # სამუშაო დირექტორია კონტეინერში
+   11  WORKDIR /app
+   12  # გადაწერა ლოკალური ფაილების კონტეინერში
+   13  COPY app.py requirements.txt data.csv ./
+   14  # საჭირო ბიბლიოთეკების დაყენება
+   15  RUN pip install -r requirements.txt
+   16  # აპლიკაციის გაშვების ბრძანება
+   17  CMD ["python", "app.py"]
+   18  [200~chmod +x run_docker.sh
+   19  ./run_docker.sh
+   20  cd C:/Users/www.leptopi.ge/DataspellProjects/exam_01
+   21  bash run_docker.sh
+   22  #!/bin/bash
+   23  # Default input and output files
+   24  INPUT_FILE="/app/input/employees.csv"
+   25  OUTPUT_FILE="/app/output/processed_employees.csv"
+   26  # Use command-line arguments if provided
+   27  if [ $# -ge 1 ]; then     INPUT_FILE=$1; fi
+   28  if [ $# -ge 2 ]; then     OUTPUT_FILE=$2; fi
+   29  # Run the Python script with the specified input and output files
+   30  python csv_processor.py "$INPUT_FILE" "$OUTPUT_FILE"
+   31  cd C:/Users/www.leptopi.ge/DataspellProjects/exam_01
+   32  bash run_docker.sh
+   33  [200~ls -la
+   34  ls -la
+   35  [200~touch run_docker.sh
+   36  touch run_docker.sh
+   37  chmod +x run_docker.sh
+   38  ./run_docker.sh
+   39  history > commands.txt
